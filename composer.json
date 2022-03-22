@@ -1,0 +1,30 @@
+{
+    "name": "larapkg/laravel-sms",
+    "description": "Manager for Sms Service Providers",
+    "type": "library",
+    "require-dev": {
+        "laravel/framework": "9.x-dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ron Appleton",
+            "email": "ron@appleton.digital"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "\\LaraPkg\\LaravelSms\\": "src/"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaraPkg\\LaravelSms\\LaravelSmsServiceProvider"
+            ],
+            "aliases": {
+                "SMS": "LaraPkg\\LaravelSms\\Facades\\Sms"
+            }
+        }
+    }
+}
