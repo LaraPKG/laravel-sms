@@ -15,7 +15,7 @@
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
-        "\\LaraPkg\\LaravelSms\\": "src/"
+        "LaraPkg\\LaravelSms\\": "src/"
     },
     "extra": {
         "laravel": {
