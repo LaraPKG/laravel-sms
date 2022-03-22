@@ -6,6 +6,9 @@ namespace LaraPkg\LaravelSms;
 
 use Illuminate\Support\ServiceProvider;
 
+use function sprintf;
+use function dirname;
+
 class LaravelSmsServiceProvider extends ServiceProvider
 {
     public function register(): void
@@ -13,14 +16,14 @@ class LaravelSmsServiceProvider extends ServiceProvider
         $this->publishes(
             [
                 $this->getPackagePath('config/laravel-sms.php') => config_path('laravel-sms.php'),
-            ]
+            ],
         );
     }
 
     public function boot(): void
     {
         $this->mergeConfigFrom(
-            $this->getPackagePath('config/laravel-sms.php'), 'laravel-sms'
+            $this->getPackagePath('config/laravel-sms.php'), 'laravel-sms',
         );
     }
 

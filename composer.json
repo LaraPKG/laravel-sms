@@ -13,7 +13,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "stematic/testing": "dev-develop"
+    },
     "autoload": {
         "LaraPkg\\LaravelSms\\": "src/",
         "Database\\Factories\\": "database/factories/",
