@@ -15,7 +15,9 @@
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
-        "LaraPkg\\LaravelSms\\": "src/"
+        "LaraPkg\\LaravelSms\\": "src/",
+        "Database\\Factories\\": "database/factories/",
+        "Database\\Seeders\\": "database/seeders/"
     },
     "extra": {
         "laravel": {
