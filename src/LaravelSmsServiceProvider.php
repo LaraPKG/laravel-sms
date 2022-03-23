@@ -29,6 +29,6 @@ class LaravelSmsServiceProvider extends ServiceProvider
 
     private function getPackagePath(?string $path = null): string
     {
-        return sprintf('%s/%s', dirname(__DIR__, 2), $path);
+        return sprintf('%s/%s', dirname(__DIR__), $path);
     }
 }

@@ -17,9 +17,16 @@
         "stematic/testing": "dev-develop"
     },
     "autoload": {
-        "LaraPkg\\LaravelSms\\": "src/",
-        "Database\\Factories\\": "database/factories/",
-        "Database\\Seeders\\": "database/seeders/"
+        "psr-4": {
+            "LaraPkg\\LaravelSms\\": "src/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
     },
     "extra": {
         "laravel": {

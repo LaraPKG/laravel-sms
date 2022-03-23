@@ -27,9 +27,10 @@ class SmsManager extends Manager implements Factory
      * @throws NotImplemented
      * @throws UnConfiguredDriver
      */
-    public function driver(?string $driver = null): Provider
+    public function driver($driver = null): Provider
     {
         $driver ??= $this->getDefaultDriver();
+
         $factoryClass = $this->findConfiguredDriver($driver);
 
         if (!isset($this->drivers[$driver])) {
@@ -68,10 +69,6 @@ class SmsManager extends Manager implements Factory
      */
     protected function buildDriver(ProviderFactory $factory): Provider
     {
-        if (!method_exists($factory, 'createDriver')) {
-            throw new NotImplemented('Driver must implement LaraPkg\\LaravelSms\\Contracts\\Provider');
-        }
-
         return $factory->createDriver();
     }
 
@@ -82,7 +79,7 @@ class SmsManager extends Manager implements Factory
     {
         $configuredDrivers = config('laravel-sms.drivers', []);
 
-        if (!in_array($driver, $configuredDrivers, true)) {
+        if (!array_key_exists($driver, $configuredDrivers)) {
             throw new UnConfiguredDriver(sprintf('Driver not configured [%s].', $driver));
         }
 
