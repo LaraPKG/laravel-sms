@@ -62,8 +62,7 @@ class SmsManagerTest extends TestCase
     }
 
     /**
-     * @throws ReflectionException
-     * @throws BindingResolutionException
+     * @throws ReflectionException|BindingResolutionException
      */
     public function testBuildDriver(): void
     {
@@ -80,6 +79,9 @@ class SmsManagerTest extends TestCase
         $this->assertInstanceOf(DummyProvider::class, $provider);
     }
 
+    /**
+     * @throws ReflectionException
+     */
     public function testCreateFactory(): void
     {
         $reflectionMethod = new ReflectionMethod(SmsManager::class, 'findConfiguredDriver');
